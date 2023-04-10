@@ -8,6 +8,15 @@
 #define A1H8_DIAG 0x0102040810204080llu
 #define H1A8_DIAG 0x8040201008040201llu
 
+static inline bool is_valid_sq(int sq) {
+    return H1 <= sq && sq <= A8;
+}
+
+static inline Board sq_mask(Square sq) {
+    assert(is_valid_sq(sq));
+    return 1llu << sq;
+}
+
 static inline Board file_mask(Square sq) {
     // 0 -> h, 7 -> a
     uint8_t file = sq % 8; 

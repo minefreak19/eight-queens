@@ -34,13 +34,4 @@ typedef enum {
     SOUTH_EAST = SOUTH + EAST,
 } Direction;
 
-static inline bool is_valid_sq(int sq) {
-    return H1 <= sq && sq <= A8;
-}
-
-static inline Board sq_mask(Square sq) {
-    assert(is_valid_sq(sq));
-    return 1llu << sq;
-}
-
 #endif // DEFS_H_

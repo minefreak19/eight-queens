@@ -68,11 +68,12 @@ void find_solutions(Board available, Board queens, int level) {
     }
 
     if (!available) return;
+    
+    Board mask = 0x1llu;
+    for (int i = 0; i < 64; i++, mask <<= 1) {
+        if (!(available & mask)) continue;
 
-    for (int i = 0; i < 64; i++) {
-        if (!(available & sq_mask(i))) continue;
-
-        find_solutions(available & ~queen_attacks(i), queens | sq_mask(i), level + 1);
+        find_solutions(available & ~queen_attacks(i), queens | mask, level + 1);
     }
 }
 
