@@ -5,7 +5,7 @@ CFLAGS := -std=c99 -Wall -Werror -pedantic -ggdb
 build: eight-queens queenmoves
 
 run: eight-queens queenmoves
-	./eight-queens ./queenmoves
+	./eight-queens ./queenmoves ./sols
 
 eight-queens: main.c defs.h
 	$(CC) $(CFLAGS) -o $@ main.c 
