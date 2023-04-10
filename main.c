@@ -103,7 +103,7 @@ int main(int argc, char **argv) {
         find_solutions(available, queens, 0);
     }
     clock_t now = clock();
-    assert(then != (clock_t) -1);
+    assert(now != (clock_t) -1);
     double secs = (double)(now - then)/CLOCKS_PER_SEC;
 
     printf("Took %lf secs.\n", secs);
