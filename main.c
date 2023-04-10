@@ -106,6 +106,9 @@ int main(int argc, char **argv) {
     assert(now != (clock_t) -1);
     double secs = (double)(now - then)/CLOCKS_PER_SEC;
 
-    printf("Took %lf secs.\n", secs);
+    // there are exactly 92 solutions to the eight-queens problem
+    // https://en.wikipedia.org/wiki/Eight_queens_puzzle#:~:text=There%20are%2092%20solutions.
+    assert(sols_count == 92);
+    printf("Found %zu solutions in %lf secs.\n", sols_count, secs);
     return 0;
 }
