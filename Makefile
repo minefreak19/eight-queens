@@ -1,4 +1,4 @@
-CFLAGS := -std=c99 -Wall -Werror -pedantic -ggdb
+CFLAGS := -O3 -std=c99 -Wall -Werror -pedantic -ggdb
 
 .PHONY: run build
 
